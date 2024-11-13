@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="/dashboard">
+                    <a href="{{url('/')}}">
                         <img src="{{ asset('mazer') }}/static/images/logo/logo.png" alt="Logo">
                     </a>
                 </div>
@@ -45,7 +45,7 @@
             <ul class="menu">
                 @auth
                     <li class="sidebar-item{{ request()->is('/') || request()->is('dashboard') ? ' active' : '' }}">
-                        <a class="sidebar-link" href="/dashboard">
+                        <a class="sidebar-link" href="{{url('/')}}">
                             <i class="bi bi-speedometer"></i>
                             <span> {{ __('Dashboard') }}</span>
                         </a>
