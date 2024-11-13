@@ -99,7 +99,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="remark">{{ __('Remarks') }}</label>
-            <input type="text" name="remarks" id="remark" class="form-control @error('remarks') is-invalid @enderror" value="{{ isset($issue) ? $issue->remarks : old('remarks') }}" placeholder="{{ __('Remarks') }}" required />
+            <input type="text" name="remarks" id="remark" class="form-control @error('remarks') is-invalid @enderror" value="{{ isset($issue) ? $issue->remarks : old('remarks') }}" placeholder="{{ __('Remarks') }}" />
             @error('remarks')
                 <span class="text-danger">
                     {{ $message }}

@@ -102,8 +102,8 @@ class IssueController extends Controller implements HasMiddleware
     public function show(Issue $issue): View
     {
 
-        $issue->load(['item:id,item_code', 'wing:id,wing_name',]);
-
+        $issue->load(['item:id,item_code', 'issueToEmployee:id,employee_name', 'issueByEmployee:id,employee_name']);
+        
         return view('issues.show', compact('issue'));
     }
 
@@ -113,7 +113,7 @@ class IssueController extends Controller implements HasMiddleware
     public function edit(Issue $issue): View
     {
 
-        $issue->load(['item:id,item_code', 'wing:id,wing_name',]);
+        $issue->load(['item:id,item_code']);
 
         return view('issues.edit', compact('issue'));
     }

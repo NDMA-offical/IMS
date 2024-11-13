@@ -26,7 +26,7 @@ class StoreIssueRequest extends FormRequest
 			'issue_date' => 'required|date',
 			'voucher_no' => 'required|string|min:1|max:25',
 			'quantity_issued' => 'required|int|min:1|max:25',
-			'remarks' => 'required|string|min:1|max:25',
+			'remarks' => 'nullable|string|min:1|max:25',
     
 			// 'issue_status' => 'required|in:one,two',
         ];
