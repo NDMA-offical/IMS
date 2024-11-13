@@ -105,6 +105,17 @@ class ViewComposerServiceProvider extends ServiceProvider
                 \App\Models\Employee::select('id', 'employee_name')->get()
             );
         });
+
+        View::composer(['itemretuns.create', 'itemretuns.edit'], function ($view) {
+            
+            return $view->with(
+                'employees',
+                \App\Models\Employee::select('id', 'employee_name')->get()
+            );
+        });
+
+        
+        
         
 
 				View::composer(['repairs.create', 'repairs.edit'], function ($view) {
@@ -141,6 +152,29 @@ class ViewComposerServiceProvider extends ServiceProvider
             return $view->with(
                 'wings',
                 \App\Models\Wing::select('id', 'wing_name')->get()
+            );
+        });
+
+		View::composer(['returns.create', 'returns.edit'], function ($view) {
+            return $view->with(
+                'items',
+                \App\Models\Item::select('id', 'item_code')->get()
+            );
+        });
+
+		
+
+		View::composer(['itemreturns.create', 'itemreturns.edit'], function ($view) {
+            return $view->with(
+                'items',
+                \App\Models\Item::select('id', 'item_code')->get()
+            );
+        });
+
+		View::composer(['itemreturns.create', 'itemreturns.edit'], function ($view) {
+            return $view->with(
+                'conditions',
+                \App\Models\Condition::select('id', 'condition_name')->get()
             );
         });
 

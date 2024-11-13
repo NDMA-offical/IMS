@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Transaction;
 use App\Http\Requests\Items\{StoreItemRequest, UpdateItemRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
@@ -33,25 +34,25 @@ class ItemController extends Controller implements HasMiddleware
     public function index(): View|JsonResponse
     {
         if (request()->ajax()) {
-            $items = Item::with(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name', ]);
+            $items = Item::with(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name',]);
 
             return DataTables::of($items)
-                ->addColumn('item_code', function($row) {
-                        return str($row->item_code)->limit(100);
-                    })
-				->addColumn('item_name', function($row) {
-                        return str($row->item_name)->limit(100);
-                    })
-				->addColumn('item_model_no', function($row) {
-                        return str($row->item_model_no)->limit(100);
-                    })
-				->addColumn('item_desp', function($row) {
-                        return str($row->item_desp)->limit(100);
-                    })
-				->addColumn('item_status', function($row) {
-                        return str($row->item_status)->limit(100);
-                    })
-				->addColumn('brand', function ($row) {
+                ->addColumn('item_code', function ($row) {
+                    return str($row->item_code)->limit(100);
+                })
+                ->addColumn('item_name', function ($row) {
+                    return str($row->item_name)->limit(100);
+                })
+                ->addColumn('item_model_no', function ($row) {
+                    return str($row->item_model_no)->limit(100);
+                })
+                ->addColumn('item_desp', function ($row) {
+                    return str($row->item_desp)->limit(100);
+                })
+                ->addColumn('item_status', function ($row) {
+                    return str($row->item_status)->limit(100);
+                })
+                ->addColumn('brand', function ($row) {
                     return $row?->brand?->brand_name ?? '';
                 })->addColumn('category', function ($row) {
                     return $row?->category?->category_name ?? '';
@@ -81,9 +82,17 @@ class ItemController extends Controller implements HasMiddleware
      */
     public function store(StoreItemRequest $request): RedirectResponse
     {
+        // Create the item and get the created instance
+        $item = Item::create(array_merge(
+            $request->validated(),
+            ['item_status' => 1]
+        ));
         
-        Item::create($request->validated());
-        
+        Transaction::create([
+            'transaction_type' => 1,
+            'item_id' => $item->id,
+            'transaction_date' => now(), 
+        ]);
 
         return to_route('items.index')->with('success', __('The item was created successfully.'));
     }
@@ -93,9 +102,9 @@ class ItemController extends Controller implements HasMiddleware
      */
     public function show(Item $item): View
     {
-        $item->load(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name', ]);
+        $item->load(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name',]);
 
-		return view('items.show', compact('item'));
+        return view('items.show', compact('item'));
     }
 
     /**
@@ -103,9 +112,9 @@ class ItemController extends Controller implements HasMiddleware
      */
     public function edit(Item $item): View
     {
-        $item->load(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name','itemclass:id,class_name', ]);
+        $item->load(['brand:id,brand_name', 'category:id,category_name', 'project:id,project_name', 'fundingsource:id,source_name', 'itemclass:id,class_name',]);
 
-		return view('items.edit', compact('item'));
+        return view('items.edit', compact('item'));
     }
 
     /**
@@ -113,7 +122,7 @@ class ItemController extends Controller implements HasMiddleware
      */
     public function update(UpdateItemRequest $request, Item $item): RedirectResponse
     {
-        
+
         $item->update($request->validated());
 
         return to_route('items.index')->with('success', __('The item was updated successfully.'));

@@ -35,3 +35,5 @@ Route::resource('designations', App\Http\Controllers\DesignationController::clas
 Route::resource('employees', App\Http\Controllers\EmployeeController::class)->middleware('auth');
 Route::resource('sections', App\Http\Controllers\SectionController::class)->middleware('auth');
 Route::resource('conditions', App\Http\Controllers\ConditionController::class)->middleware('auth');
+Route::resource('returns', App\Http\Controllers\ReturnController::class)->middleware('auth');
+Route::resource('itemreturns', App\Http\Controllers\ItemreturnController::class)->middleware('auth');
