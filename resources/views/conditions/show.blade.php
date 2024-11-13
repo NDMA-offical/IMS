@@ -40,16 +40,16 @@
                 </tr>
 <tr>
                                 <td class="fw-bold">{{ __('Condition Status') }}</td>
-                                <td>{{ $condition->condition_status == 1 ? 'True' : 'False' }}</td>
+                                <td>{{ $condition->condition_status == 1 ? 'Active' : 'Inactive' }}</td>
                               </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $condition->created_at->format('Y-m-d H:i:s') }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Updated at') }}</td>
                                         <td>{{ $condition->updated_at->format('Y-m-d H:i:s') }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
 

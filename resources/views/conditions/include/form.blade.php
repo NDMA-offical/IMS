@@ -15,8 +15,8 @@
             <label for="condition-status">{{ __('Condition Status') }}</label>
             <select class="form-select @error('condition_status') is-invalid @enderror" name="condition_status" id="condition-status" class="form-control" required>
                 <option value="" selected disabled>-- {{ __('Select condition status') }} --</option>
-                <option value="0" {{ isset($condition) && $condition?->condition_status == '0' ? 'selected' : (old('condition_status') == '0' ? 'selected' : '') }}>{{ __('True') }}</option>
-				<option value="1" {{ isset($condition) && $condition?->condition_status == '1' ? 'selected' : (old('condition_status') == '1' ? 'selected' : '') }}>{{ __('False') }}</option>
+                <option value="0" {{ isset($condition) && $condition?->condition_status == '0' ? 'selected' : (old('condition_status') == '0' ? 'selected' : '') }}>{{ __('Active') }}</option>
+				<option value="1" {{ isset($condition) && $condition?->condition_status == '1' ? 'selected' : (old('condition_status') == '1' ? 'selected' : '') }}>{{ __('Inactive') }}</option>
             </select>
             @error('condition_status')
                 <span class="text-danger">

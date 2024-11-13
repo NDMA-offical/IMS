@@ -44,16 +44,16 @@
                 </tr>
 <tr>
                                 <td class="fw-bold">{{ __('Section Status') }}</td>
-                                <td>{{ $section->section_status == 1 ? 'True' : 'False' }}</td>
+                                <td>{{ $section->section_status == 1 ? 'Active' : 'Inactive' }}</td>
                               </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $section->created_at->format('Y-m-d H:i:s') }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Updated at') }}</td>
                                         <td>{{ $section->updated_at->format('Y-m-d H:i:s') }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
 
