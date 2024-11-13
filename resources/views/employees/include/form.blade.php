@@ -21,7 +21,7 @@
             @enderror
         </div>
     </div>
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
         <div class="form-group">
             <label for="employee-email">{{ __('Employee Email') }}</label>
             <input type="text" name="employee_email" id="employee-email" class="form-control @error('employee_email') is-invalid @enderror" value="{{ isset($employee) ? $employee->employee_email : old('employee_email') }}" placeholder="{{ __('Employee Email') }}" required />
@@ -42,7 +42,7 @@
                 </span>
             @enderror
         </div>
-    </div>
+    </div> -->
     <div class="col-md-6">
         <div class="form-group">
             <label for="wing-id">{{ __('Wing') }}</label>

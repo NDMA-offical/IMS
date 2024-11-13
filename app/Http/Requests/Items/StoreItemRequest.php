@@ -31,10 +31,14 @@ class StoreItemRequest extends FormRequest
 			'itemclass_id' => 'required|exists:App\Models\Itemclass,id',
             'vendor_id' => 'required|exists:App\Models\Vendor,id',
             'type_id' => 'required|exists:App\Models\Itemtype,id',
-			'item_status' => 'required|string|min:1|max:25',
+			'item_status' => 'nullable|string|min:1|max:25',
 			'received_date' => 'required|date',
             'grn_id' => 'required|string',
             'quantity' => 'required|string',
+            'condition_id' => 'required|string',
+            'warranty_start' => 'nullable|date',
+            'warranty_end' => 'nullable|date',
+            'warranty_terms' => 'nullable|string',
         ];
     }
 }

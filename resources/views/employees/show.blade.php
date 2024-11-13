@@ -35,41 +35,33 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
                                     <tr>
-                    <td class="fw-bold">{{ __('Employee Name') }}</td>
-                    <td>{{ $employee->employee_name }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Employee Cnic') }}</td>
-                    <td>{{ $employee->employee_cnic }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Employee Email') }}</td>
-                    <td>{{ $employee->employee_email }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Employee Contact') }}</td>
-                    <td>{{ $employee->employee_contact }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Wing') }}</td>
-                    <td>{{ $employee->wing ? $employee->wing->wing_name : '' }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Designation') }}</td>
-                    <td>{{ $employee->designation ? $employee->designation->designation_name : '' }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('User Status') }}</td>
-                    <td>{{ $employee->user_status }}</td>
-                </tr>
+                                        <td class="fw-bold">{{ __('Employee Name') }}</td>
+                                        <td>{{ $employee->employee_name }}</td>
+                                    </tr>
                                     <tr>
+                                        <td class="fw-bold">{{ __('Employee Cnic') }}</td>
+                                        <td>{{ $employee->employee_cnic }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Wing') }}</td>
+                                        <td>{{ $employee->wing ? $employee->wing->wing_name : '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Designation') }}</td>
+                                        <td>{{ $employee->designation ? $employee->designation->designation_name : '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('User Status') }}</td>
+                                        <td>{{ $employee->user_status }}</td>
+                                    </tr>
+                                    <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $employee->created_at->format('Y-m-d H:i:s') }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Updated at') }}</td>
                                         <td>{{ $employee->updated_at->format('Y-m-d H:i:s') }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
 

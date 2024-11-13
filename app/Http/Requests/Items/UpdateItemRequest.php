@@ -35,6 +35,10 @@ class UpdateItemRequest extends FormRequest
             'received_date' => 'required|date',
             'grn_id' => 'required|string',
             'quantity' => 'required|string',
+            'condition_id' => 'required|string',
+            'warranty_start' => 'nullable|date',
+            'warranty_end' => 'nullable|date',
+            'warranty_terms' => 'nullable|string',
         ];
     }
 }

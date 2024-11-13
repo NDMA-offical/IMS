@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', __('Employees'))
+@section('title', __('Conditions'))
 
 @section('content')
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-8 order-md-1 order-last">
-                    <h3>{{ __('Employees') }}</h3>
+                    <h3>{{ __('Conditions') }}</h3>
                     <p class="text-subtitle text-muted">
-                        {{ __('Below is a list of all employees.') }}
+                        {{ __('Below is a list of all conditions.') }}
                     </p>
                 </div>
                 <x-breadcrumb>
                     <li class="breadcrumb-item"><a href="/">{{ __('Dashboard') }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ __('Employees') }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ __('Conditions') }}</li>
                 </x-breadcrumb>
             </div>
         </div>
@@ -22,11 +22,11 @@
         <section class="section">
             <x-alert></x-alert>
 
-                @can('employee create')
+                @can('condition create')
                     <div class="d-flex justify-content-end">
-                        <a href="{{ route('employees.create') }}" class="btn btn-primary mb-3">
+                        <a href="{{ route('conditions.create') }}" class="btn btn-primary mb-3">
                             <i class="fas fa-plus"></i>
-                            {{ __('Create a new employee') }}
+                            {{ __('Create a new condition') }}
                         </a>
                     </div>
                 @endcan
@@ -39,12 +39,10 @@
                                 <table class="table table-striped" id="data-table" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('Employee Name') }}</th>
-											<th>{{ __('Employee Cnic') }}</th>
-											<!-- <th>{{ __('Employee Email') }}</th>
-											<th>{{ __('Employee Contact') }}</th> -->
-											<th>{{ __('Wing') }}</th>
-											<th>{{ __('Designation') }}</th>
+                                            <th>{{ __('Condition Name') }}</th>
+											<th>{{ __('Condition Status') }}</th>
+                                            <th>{{ __('Created At') }}</th>
+                                            <th>{{ __('Updated At') }}</th>
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -70,23 +68,23 @@
         $('#data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('employees.index') }}",
+            ajax: "{{ route('conditions.index') }}",
             columns: [
                 {
-                    data: 'employee_name',
-                    name: 'employee_name',
+                    data: 'condition_name',
+                    name: 'condition_name',
                 },
 				{
-                    data: 'employee_cnic',
-                    name: 'employee_cnic',
+                    data: 'condition_status',
+                    name: 'condition_status',
                 },
-				{
-                    data: 'wing',
-                    name: 'wing.wing_name'
+                {
+                    data: 'created_at',
+                    name: 'created_at'
                 },
-				{
-                    data: 'designation',
-                    name: 'designation.designation_name'
+                {
+                    data: 'updated_at',
+                    name: 'updated_at'
                 },
                 {
                     data: 'action',
