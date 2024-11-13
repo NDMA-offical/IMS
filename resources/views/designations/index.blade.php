@@ -42,8 +42,8 @@
                                             <th>{{ __('Designation Name') }}</th>
 											<th>{{ __('Designation Name Short') }}</th>
 											<th>{{ __('Designation Status') }}</th>
-                                            <th>{{ __('Created At') }}</th>
-                                            <th>{{ __('Updated At') }}</th>
+                                            <!-- <th>{{ __('Created At') }}</th>
+                                            <th>{{ __('Updated At') }}</th> -->
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -83,14 +83,14 @@
                     data: 'designation_status',
                     name: 'designation_status',
                 },
-                {
-                    data: 'created_at',
-                    name: 'created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'updated_at'
-                },
+                // {
+                //     data: 'created_at',
+                //     name: 'created_at'
+                // },
+                // {
+                //     data: 'updated_at',
+                //     name: 'updated_at'
+                // },
                 {
                     data: 'action',
                     name: 'action',
