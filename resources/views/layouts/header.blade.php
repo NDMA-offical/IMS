@@ -35,7 +35,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-lg-0">
-                                <li class="nav-item dropdown me-1">
+                                <!-- <li class="nav-item dropdown me-1">
                                     <a class="nav-link active dropdown-toggle text-gray-600" href="#"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-flag bi-sub fs-4"></i>
@@ -49,7 +49,7 @@
                                         <li><a class="dropdown-item{{ config('app.locale') == 'en' ? ' active' : '' }}"
                                                 href="#">{{ __('English') }}</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                             @auth
                             <div class="dropdown">
