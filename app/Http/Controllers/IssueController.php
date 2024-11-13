@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Issue;
 use App\Models\Item;
+use App\Models\Transaction;
 use App\Http\Requests\Issues\{StoreIssueRequest, UpdateIssueRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
@@ -90,8 +91,14 @@ class IssueController extends Controller implements HasMiddleware
     public function store(StoreIssueRequest $request): RedirectResponse
     {
 
-        Issue::create($request->validated());
+        $issue = Issue::create($request->validated());
         Item::where('id', $request->item_id)->update(['item_status' => 2]);
+
+        Transaction::create([
+            'transaction_type' => 2,
+            'issue_id' => $issue->id,
+            'transaction_date' => now(), 
+        ]);
 
         return to_route('issues.index')->with('success', __('The issue was created successfully.'));
     }

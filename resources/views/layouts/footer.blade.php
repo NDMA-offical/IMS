@@ -17,6 +17,21 @@
     <script src="{{ asset('mazer') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('mazer') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="{{ asset('mazer') }}/compiled/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#brand-id').select2({
+            placeholder: "-- {{ __('Select brand') }} --",
+            allowClear: true
+        });
+        $('#issue_to').select2({
+            placeholder: "-- {{ __('Select sdsd') }} --",
+            allowClear: true
+        });
+    });
+</script>
     @stack('js')
 </body>
 

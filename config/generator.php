@@ -128,7 +128,9 @@ return [
             'designation view',
             'employee view',
             'section view',
-            'condition view'
+            'condition view',
+            'return view',
+            'itemreturn view'
         ],
         'menus' => [
             [
@@ -264,6 +266,22 @@ return [
                 'icon' => '<i class="bi bi-folder-fill"></i>',
                 'route' => '/conditions',
                 'permission' => 'condition view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
+                'title' => 'Returns',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/returns',
+                'permission' => 'return view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
+                'title' => 'Itemreturns',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/itemreturns',
+                'permission' => 'itemreturn view',
                 'permissions' => [],
                 'submenus' => []
             ]
