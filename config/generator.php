@@ -127,7 +127,8 @@ return [
             'vendor view',
             'designation view',
             'employee view',
-            'section view'
+            'section view',
+            'condition view'
         ],
         'menus' => [
             [
@@ -255,6 +256,14 @@ return [
                 'icon' => '<i class="bi bi-folder-fill"></i>',
                 'route' => '/sections',
                 'permission' => 'section view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
+                'title' => 'Conditions',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/conditions',
+                'permission' => 'condition view',
                 'permissions' => [],
                 'submenus' => []
             ]

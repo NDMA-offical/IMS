@@ -21,7 +21,7 @@ class Item extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['item_code', 'item_name', 'item_model_no', 'item_desp', 'brand_id', 'category_id', 'project_id', 'fundingsource_id', 'itemclass_id', 'item_status', 'received_date', 'grn_id', 'quantity', 'vendor_id', 'type_id'];
+    protected $fillable = ['item_code', 'item_name', 'item_model_no', 'item_desp', 'brand_id', 'category_id', 'project_id', 'fundingsource_id', 'itemclass_id', 'item_status', 'received_date', 'grn_id', 'quantity', 'vendor_id', 'type_id','condition_id','warranty_start','warranty_end','warrenty_terms'];
 
     /**
      * Get the attributes that should be cast.

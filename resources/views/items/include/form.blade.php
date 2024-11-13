@@ -212,9 +212,50 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="item-status">{{ __('Item Status') }}</label>
-            <input type="text" name="item_status" id="item-status" class="form-control @error('item_status') is-invalid @enderror" value="{{ isset($item) ? $item->item_status : old('item_status') }}" placeholder="{{ __('Item Status') }}" required />
-            @error('item_status')
+            <label for="condition-id">{{ __('Condition') }}</label>
+            <select class="form-select @error('condition_id') is-invalid @enderror" name="condition_id" id="condition-id" class="form-control" required>
+                <option value="" selected disabled>-- {{ __('Select Condition') }} --</option>
+                
+                        @foreach ($conditions as $condition)
+                            <option value="{{ $condition?->id }}" {{ isset($item) && $item?->condition_id == $condition?->id ? 'selected' : (old('condition_id') == $condition?->id ? 'selected' : '') }}>
+                                {{ $condition?->condition_name }}
+                            </option>
+                        @endforeach
+            </select>
+            @error('condition_id')
+                <span class="text-danger">
+                    {{ $message }}
+                </span>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="warranty-start">{{ __('Warranty Start') }}</label>
+            <input type="date" name="warranty_start" id="warranty_start" class="form-control @error('warranty_start') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_start : old('warranty_start') }}" placeholder="{{ __('GRN ID') }}" required />
+            @error('warranty_start')
+                <span class="text-danger">
+                    {{ $message }}
+                </span>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="warranty-start">{{ __('Warranty End') }}</label>
+            <input type="date" name="warranty_end" id="warranty_end" class="form-control @error('warranty_end') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_end : old('warranty_end') }}" placeholder="{{ __('GRN ID') }}" required />
+            @error('warranty_start')
+                <span class="text-danger">
+                    {{ $message }}
+                </span>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="terms">{{ __('Warranty Terms') }}</label>
+            <input type="text" name="warranty_terms" id="warranty_terms" class="form-control @error('warranty_terms') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_terms : old('warranty_terms') }}" placeholder="{{ __('warranty terms') }}" required />
+            @error('warranty_terms')
                 <span class="text-danger">
                     {{ $message }}
                 </span>
