@@ -46,8 +46,8 @@
 											<th>{{ __('Repair Date') }}</th>
 											<th>{{ __('Repair Status') }}</th>
 											<th>{{ __('Fundingsource') }}</th>
-                                            <th>{{ __('Created At') }}</th>
-                                            <th>{{ __('Updated At') }}</th>
+                                            <!-- <th>{{ __('Created At') }}</th>
+                                            <th>{{ __('Updated At') }}</th> -->
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -103,14 +103,14 @@
                     data: 'fundingsource',
                     name: 'fundingsource.source_name'
                 },
-                {
-                    data: 'created_at',
-                    name: 'created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'updated_at'
-                },
+                // {
+                //     data: 'created_at',
+                //     name: 'created_at'
+                // },
+                // {
+                //     data: 'updated_at',
+                //     name: 'updated_at'
+                // },
                 {
                     data: 'action',
                     name: 'action',

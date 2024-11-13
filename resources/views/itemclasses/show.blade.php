@@ -40,7 +40,7 @@
                 </tr>
 <tr>
                                 <td class="fw-bold">{{ __('Class Status') }}</td>
-                                <td>{{ $itemclass->class_status == 1 ? 'True' : 'False' }}</td>
+                                <td>{{ $itemclass->class_status == 1 ? 'Active' : 'Inactive' }}</td>
                               </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>

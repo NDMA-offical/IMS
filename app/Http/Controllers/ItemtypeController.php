@@ -42,6 +42,9 @@ class ItemtypeController extends Controller implements HasMiddleware
 				->addColumn('type_desp', function($row) {
                         return str($row->type_desp)->limit(100);
                     })
+                ->addColumn('type_status', function($row) {
+                    return $row->type_status ? 'Active' : 'Inactive';
+                })
 				->addColumn('action', 'itemtypes.include.action')
                 ->toJson();
         }
