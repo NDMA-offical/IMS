@@ -39,21 +39,21 @@
                     <td>{{ $vendor->vendor_name }}</td>
                 </tr>
 <tr>
-                    <td class="fw-bold">{{ __('Vendor Desp') }}</td>
+                    <td class="fw-bold">{{ __('Vendor Description') }}</td>
                     <td>{{ $vendor->vendor_desp }}</td>
                 </tr>
 <tr>
                                 <td class="fw-bold">{{ __('Vendor Status') }}</td>
-                                <td>{{ $vendor->vendor_status == 1 ? 'True' : 'False' }}</td>
+                                <td>{{ $vendor->vendor_status == 1 ? 'Active' : 'Inactive' }}</td>
                               </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $vendor->created_at->format('Y-m-d H:i:s') }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Updated at') }}</td>
                                         <td>{{ $vendor->updated_at->format('Y-m-d H:i:s') }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
 

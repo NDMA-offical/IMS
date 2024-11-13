@@ -40,10 +40,10 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Vendor Name') }}</th>
-											<th>{{ __('Vendor Desp') }}</th>
+											<th>{{ __('Vendor Description') }}</th>
 											<th>{{ __('Vendor Status') }}</th>
-                                            <th>{{ __('Created At') }}</th>
-                                            <th>{{ __('Updated At') }}</th>
+                                            <!-- <th>{{ __('Created At') }}</th>
+                                            <th>{{ __('Updated At') }}</th> -->
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -83,14 +83,14 @@
                     data: 'vendor_status',
                     name: 'vendor_status',
                 },
-                {
-                    data: 'created_at',
-                    name: 'created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'updated_at'
-                },
+                // {
+                //     data: 'created_at',
+                //     name: 'created_at'
+                // },
+                // {
+                //     data: 'updated_at',
+                //     name: 'updated_at'
+                // },
                 {
                     data: 'action',
                     name: 'action',
