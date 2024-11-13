@@ -41,7 +41,7 @@
                                         <tr>
                                             <th>{{ __('Wing Name') }}</th>
 											<!-- <th>{{ __('Wing Short Name') }}</th> -->
-											<th>{{ __('Wing Desp') }}</th>
+											<!-- <th>{{ __('Wing Desp') }}</th> -->
 											<th>{{ __('Wing Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->
@@ -80,10 +80,10 @@
                 //     data: 'wing_short_name',
                 //     name: 'wing_short_name',
                 // },
-				{
-                    data: 'wing_desp',
-                    name: 'wing_desp',
-                },
+				//{
+                //    data: 'wing_desp',
+                //    name: 'wing_desp',
+                //},
 				{
                     data: 'wing_status',
                     name: 'wing_status',

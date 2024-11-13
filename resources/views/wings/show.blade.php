@@ -35,21 +35,21 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
                                     <tr>
-                    <td class="fw-bold">{{ __('Wing Name') }}</td>
-                    <td>{{ $wing->wing_name }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Wing Short Name') }}</td>
-                    <td>{{ $wing->wing_short_name }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Wing Desp') }}</td>
-                    <td>{{ $wing->wing_desp }}</td>
-                </tr>
-<tr>
-                                <td class="fw-bold">{{ __('Wing Status') }}</td>
-                                <td>{{ $wing->wing_status == 1 ? 'True' : 'False' }}</td>
-                              </tr>
+                                        <td class="fw-bold">{{ __('Wing Name') }}</td>
+                                        <td>{{ $wing->wing_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Wing Short Name') }}</td>
+                                        <td>{{ $wing->wing_short_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Wing Desp') }}</td>
+                                        <td>{{ $wing->wing_desp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Wing Status') }}</td>
+                                        <td>{{ $wing->wing_status == 1 ? 'Active' : 'Inactive' }}</td>
+                                    </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $wing->created_at->format('Y-m-d H:i:s') }}</td>
