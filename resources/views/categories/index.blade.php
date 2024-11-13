@@ -40,7 +40,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Category Name') }}</th>
-											<th>{{ __('Category Desp') }}</th>
+											<!-- <th>{{ __('Category Desp') }}</th> -->
 											<th>{{ __('Category Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->
@@ -75,10 +75,10 @@
                     data: 'category_name',
                     name: 'category_name',
                 },
-				{
-                    data: 'category_desp',
-                    name: 'category_desp',
-                },
+				//{
+                //    data: 'category_desp',
+                //    name: 'category_desp',
+                //},
 				{
                     data: 'category_status',
                     name: 'category_status',

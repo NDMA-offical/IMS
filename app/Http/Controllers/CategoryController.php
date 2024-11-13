@@ -39,9 +39,9 @@ class CategoryController extends Controller implements HasMiddleware
                 ->addColumn('category_name', function($row) {
                         return str($row->category_name)->limit(100);
                     })
-				->addColumn('category_desp', function($row) {
-                        return str($row->category_desp)->limit(100);
-                    })
+				// ->addColumn('category_desp', function($row) {
+                //         return str($row->category_desp)->limit(100);
+                //     })
                     ->addColumn('category_status', function($row) {
                         return $row->category_status ? 'Active' : 'Inactive';
                     })

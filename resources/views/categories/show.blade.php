@@ -35,17 +35,17 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
                                     <tr>
-                    <td class="fw-bold">{{ __('Category Name') }}</td>
-                    <td>{{ $category->category_name }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Category Desp') }}</td>
-                    <td>{{ $category->category_desp }}</td>
-                </tr>
-<tr>
-                                <td class="fw-bold">{{ __('Category Status') }}</td>
-                                <td>{{ $category->category_status == 1 ? 'True' : 'False' }}</td>
-                              </tr>
+                                        <td class="fw-bold">{{ __('Category Name') }}</td>
+                                        <td>{{ $category->category_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Category Desp') }}</td>
+                                        <td>{{ $category->category_desp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Category Status') }}</td>
+                                        <td>{{ $category->category_status == 1 ? 'Active' : 'Incative' }}</td>
+                                    </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $category->created_at->format('Y-m-d H:i:s') }}</td>
