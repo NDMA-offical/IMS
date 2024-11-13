@@ -39,12 +39,12 @@ class WingController extends Controller implements HasMiddleware
                 ->addColumn('wing_name', function($row) {
                         return str($row->wing_name)->limit(100);
                     })
-				->addColumn('wing_short_name', function($row) {
-                        return str($row->wing_short_name)->limit(100);
-                    })
-				->addColumn('wing_desp', function($row) {
-                        return str($row->wing_desp)->limit(100);
-                    })
+				// ->addColumn('wing_short_name', function($row) {
+                //         return str($row->wing_short_name)->limit(100);
+                //     })
+				// ->addColumn('wing_desp', function($row) {
+                //         return str($row->wing_desp)->limit(100);
+                //     })
                     ->addColumn('wing_status', function($row) {
                         return $row->wing_status ? 'Active' : 'Inactive';
                     })

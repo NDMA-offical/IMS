@@ -35,17 +35,17 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
                                     <tr>
-                    <td class="fw-bold">{{ __('Project Name') }}</td>
-                    <td>{{ $project->project_name }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Project Desp') }}</td>
-                    <td>{{ $project->project_desp }}</td>
-                </tr>
-<tr>
-                                <td class="fw-bold">{{ __('Project Status') }}</td>
-                                <td>{{ $project->project_status == 1 ? 'True' : 'False' }}</td>
-                              </tr>
+                                        <td class="fw-bold">{{ __('Project Name') }}</td>
+                                        <td>{{ $project->project_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Project Description') }}</td>
+                                        <td>{{ $project->project_desp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Project Status') }}</td>
+                                        <td>{{ $project->project_status == 1 ? 'Active' : 'Inactive' }}</td>
+                                    </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $project->created_at->format('Y-m-d H:i:s') }}</td>

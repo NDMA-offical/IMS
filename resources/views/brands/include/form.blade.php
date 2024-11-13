@@ -12,8 +12,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="brand-desp">{{ __('Brand Desp') }}</label>
-            <input type="text" name="brand_desp" id="brand-desp" class="form-control @error('brand_desp') is-invalid @enderror" value="{{ isset($brand) ? $brand->brand_desp : old('brand_desp') }}" placeholder="{{ __('Brand Desp') }}" />
+            <label for="brand-desp">{{ __('Brand Description') }}</label>
+            <input type="text" name="brand_desp" id="brand-desp" class="form-control @error('brand_desp') is-invalid @enderror" value="{{ isset($brand) ? $brand->brand_desp : old('brand_desp') }}" placeholder="{{ __('Brand Description') }}" />
             @error('brand_desp')
                 <span class="text-danger">
                     {{ $message }}

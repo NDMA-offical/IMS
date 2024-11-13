@@ -44,8 +44,8 @@
                                             <th>{{ __('Name') }}</th>
                                             <th>{{ __('Email') }}</th>
                                             <th>{{ __('Role') }}</th>
-                                            <th>{{ __('Created At') }}</th>
-                                            <th>{{ __('Updated At') }}</th>
+                                            <!-- <th>{{ __('Created At') }}</th>
+                                            <th>{{ __('Updated At') }}</th> -->
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -102,14 +102,14 @@
                     data: 'role',
                     name: 'role'
                 },
-                {
-                    data: 'created_at',
-                    name: 'created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'updated_at'
-                },
+                // {
+                //     data: 'created_at',
+                //     name: 'created_at'
+                // },
+                // {
+                //     data: 'updated_at',
+                //     name: 'updated_at'
+                // },
                 {
                     data: 'action',
                     name: 'action',

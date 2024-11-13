@@ -34,8 +34,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="item-desp">{{ __('Item Desp') }}</label>
-            <input type="text" name="item_desp" id="item-desp" class="form-control @error('item_desp') is-invalid @enderror" value="{{ isset($item) ? $item->item_desp : old('item_desp') }}" placeholder="{{ __('Item Desp') }}" required />
+            <label for="item-desp">{{ __('Item Description') }}</label>
+            <input type="text" name="item_desp" id="item-desp" class="form-control @error('item_desp') is-invalid @enderror" value="{{ isset($item) ? $item->item_desp : old('item_desp') }}" placeholder="{{ __('Item Description') }}" required />
             @error('item_desp')
             <span class="text-danger">
                 {{ $message }}
@@ -233,7 +233,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="warranty-start">{{ __('Warranty Start') }}</label>
-            <input type="date" name="warranty_start" id="warranty_start" class="form-control @error('warranty_start') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_start : old('warranty_start') }}" placeholder="{{ __('GRN ID') }}" required />
+            <input type="date" name="warranty_start" id="warranty_start" class="form-control @error('warranty_start') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_start : old('warranty_start') }}" placeholder="{{ __('Warrenty Start') }}" />
             @error('warranty_start')
             <span class="text-danger">
                 {{ $message }}
@@ -244,7 +244,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="warranty-start">{{ __('Warranty End') }}</label>
-            <input type="date" name="warranty_end" id="warranty_end" class="form-control @error('warranty_end') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_end : old('warranty_end') }}" placeholder="{{ __('GRN ID') }}" required />
+            <input type="date" name="warranty_end" id="warranty_end" class="form-control @error('warranty_end') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_end : old('warranty_end') }}" placeholder="{{ __('Warrenty End') }}" />
             @error('warranty_start')
             <span class="text-danger">
                 {{ $message }}
@@ -255,7 +255,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="terms">{{ __('Warranty Terms') }}</label>
-            <input type="text" name="warranty_terms" id="warranty_terms" class="form-control @error('warranty_terms') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_terms : old('warranty_terms') }}" placeholder="{{ __('warranty terms') }}" required />
+            <input type="text" name="warranty_terms" id="warranty_terms" class="form-control @error('warranty_terms') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_terms : old('warranty_terms') }}" placeholder="{{ __('warranty terms') }}" />
             @error('warranty_terms')
             <span class="text-danger">
                 {{ $message }}

@@ -39,6 +39,9 @@ class ConditionController extends Controller implements HasMiddleware
                 ->addColumn('condition_name', function($row) {
                         return str($row->condition_name)->limit(100);
                     })
+                    ->addColumn('condition_status', function($row) {
+                        return $row->condition_status ? 'Active' : 'Inactive';
+                    })
 				->addColumn('action', 'conditions.include.action')
                 ->toJson();
         }

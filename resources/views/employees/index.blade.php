@@ -40,11 +40,11 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Employee Name') }}</th>
-											<th>{{ __('Employee Cnic') }}</th>
+											<!-- <th>{{ __('Employee Cnic') }}</th> -->
 											<!-- <th>{{ __('Employee Email') }}</th>
 											<th>{{ __('Employee Contact') }}</th> -->
 											<th>{{ __('Wing') }}</th>
-											<th>{{ __('Designation') }}</th>
+											<!-- <th>{{ __('Designation') }}</th> -->
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -76,18 +76,18 @@
                     data: 'employee_name',
                     name: 'employee_name',
                 },
-				{
-                    data: 'employee_cnic',
-                    name: 'employee_cnic',
-                },
+				// {
+                //     data: 'employee_cnic',
+                //     name: 'employee_cnic',
+                // },
 				{
                     data: 'wing',
                     name: 'wing.wing_name'
                 },
-				{
-                    data: 'designation',
-                    name: 'designation.designation_name'
-                },
+				// {
+                //     data: 'designation',
+                //     name: 'designation.designation_name'
+                // },
                 {
                     data: 'action',
                     name: 'action',

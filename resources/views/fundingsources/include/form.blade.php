@@ -12,8 +12,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="source-desp">{{ __('Source Desp') }}</label>
-            <input type="text" name="source_desp" id="source-desp" class="form-control @error('source_desp') is-invalid @enderror" value="{{ isset($fundingsource) ? $fundingsource->source_desp : old('source_desp') }}" placeholder="{{ __('Source Desp') }}" />
+            <label for="source-desp">{{ __('Source Description') }}</label>
+            <input type="text" name="source_desp" id="source-desp" class="form-control @error('source_desp') is-invalid @enderror" value="{{ isset($fundingsource) ? $fundingsource->source_desp : old('source_desp') }}" placeholder="{{ __('Source Description') }}" />
             @error('source_desp')
                 <span class="text-danger">
                     {{ $message }}

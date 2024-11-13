@@ -12,8 +12,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="category-desp">{{ __('Category Desp') }}</label>
-            <input type="text" name="category_desp" id="category-desp" class="form-control @error('category_desp') is-invalid @enderror" value="{{ isset($category) ? $category->category_desp : old('category_desp') }}" placeholder="{{ __('Category Desp') }}" />
+            <label for="category-desp">{{ __('Category Description') }}</label>
+            <input type="text" name="category_desp" id="category-desp" class="form-control @error('category_desp') is-invalid @enderror" value="{{ isset($category) ? $category->category_desp : old('category_desp') }}" placeholder="{{ __('Category Description') }}" />
             @error('category_desp')
                 <span class="text-danger">
                     {{ $message }}

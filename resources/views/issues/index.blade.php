@@ -48,8 +48,8 @@
                                         <th>{{ __('Voucher No') }}</th>
 
                                         <!-- <th>{{ __('Issue Status') }}</th> -->
-                                        <th>{{ __('Created At') }}</th>
-                                        <th>{{ __('Updated At') }}</th>
+                                        <!-- <th>{{ __('Created At') }}</th>
+                                        <th>{{ __('Updated At') }}</th> -->
                                         <th>{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
@@ -108,14 +108,14 @@
             //     data: 'issue_status',
             //     name: 'issue_status',
             // },
-            {
-                data: 'created_at',
-                name: 'created_at'
-            },
-            {
-                data: 'updated_at',
-                name: 'updated_at'
-            },
+            // {
+            //     data: 'created_at',
+            //     name: 'created_at'
+            // },
+            // {
+            //     data: 'updated_at',
+            //     name: 'updated_at'
+            // },
             {
                 data: 'action',
                 name: 'action',

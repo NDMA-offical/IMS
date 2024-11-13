@@ -21,7 +21,7 @@ class Issue extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['item_id', 'issue_to', 'issue_by', 'issue_date', 'voucher_no', 'remarks','quantity_issued'];
+    protected $fillable = ['item_id', 'issue_to', 'issue_by', 'issue_date', 'voucher_no','quantity_issued'];
 
     /**
      * Get the attributes that should be cast.
@@ -30,7 +30,7 @@ class Issue extends Model
      */
     protected function casts(): array
     {
-        return ['issue_to_name' => 'string', 'issue_by' => 'string', 'issue_date' => 'date:Y-m-d', 'voucher_no' => 'string', 'remarks' => 'string', 'created_at' => 'datetime:Y-m-d H:i:s', 'updated_at' => 'datetime:Y-m-d H:i:s'];
+        return ['issue_to_name' => 'string', 'issue_by' => 'string', 'issue_date' => 'date:Y-m-d', 'voucher_no' => 'string', 'created_at' => 'datetime:Y-m-d H:i:s', 'updated_at' => 'datetime:Y-m-d H:i:s'];
     }
 
 

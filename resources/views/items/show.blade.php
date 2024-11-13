@@ -47,7 +47,7 @@
                                     <td>{{ $item->item_model_no }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="fw-bold">{{ __('Item Desp') }}</td>
+                                    <td class="fw-bold">{{ __('Item Description') }}</td>
                                     <td>{{ $item->item_desp }}</td>
                                 </tr>
                                 <tr>

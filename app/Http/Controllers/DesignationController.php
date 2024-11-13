@@ -42,6 +42,9 @@ class DesignationController extends Controller implements HasMiddleware
 				->addColumn('designation_name_short', function($row) {
                         return str($row->designation_name_short)->limit(100);
                     })
+                ->addColumn('designation_status', function($row) {
+                    return $row->designation_status ? 'Active' : 'Inactive';
+                })
 				->addColumn('action', 'designations.include.action')
                 ->toJson();
         }

@@ -43,9 +43,9 @@ class BrandController extends Controller implements HasMiddleware
                 ->addColumn('brand_name', function($row) {
                         return str($row->brand_name)->limit(100);
                     })
-				->addColumn('brand_desp', function($row) {
-                        return str($row->brand_desp)->limit(100);
-                    })
+				// ->addColumn('brand_desp', function($row) {
+                //         return str($row->brand_desp)->limit(100);
+                //     })
                     ->addColumn('brand_status', function($row) {
                         return $row->brand_status ? 'Active' : 'Inactive';
                     })

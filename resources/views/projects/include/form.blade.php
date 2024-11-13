@@ -12,8 +12,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="project-desp">{{ __('Project Desp') }}</label>
-            <input type="text" name="project_desp" id="project-desp" class="form-control @error('project_desp') is-invalid @enderror" value="{{ isset($project) ? $project->project_desp : old('project_desp') }}" placeholder="{{ __('Project Desp') }}"/>
+            <label for="project-desp">{{ __('Project Description') }}</label>
+            <input type="text" name="project_desp" id="project-desp" class="form-control @error('project_desp') is-invalid @enderror" value="{{ isset($project) ? $project->project_desp : old('project_desp') }}" placeholder="{{ __('Project Description') }}"/>
             @error('project_desp')
                 <span class="text-danger">
                     {{ $message }}

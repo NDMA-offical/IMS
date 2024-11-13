@@ -23,8 +23,8 @@
     </div> -->
     <div class="col-md-6">
         <div class="form-group">
-            <label for="wing-desp">{{ __('Wing Desp') }}</label>
-            <input type="text" name="wing_desp" id="wing-desp" class="form-control @error('wing_desp') is-invalid @enderror" value="{{ isset($wing) ? $wing->wing_desp : old('wing_desp') }}" placeholder="{{ __('Wing Desp') }}" />
+            <label for="wing-desp">{{ __('Wing Description') }}</label>
+            <input type="text" name="wing_desp" id="wing-desp" class="form-control @error('wing_desp') is-invalid @enderror" value="{{ isset($wing) ? $wing->wing_desp : old('wing_desp') }}" placeholder="{{ __('Wing Description') }}" />
             @error('wing_desp')
                 <span class="text-danger">
                     {{ $message }}

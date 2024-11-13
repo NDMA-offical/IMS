@@ -26,8 +26,8 @@
             <label for="designation-status">{{ __('Designation Status') }}</label>
             <select class="form-select @error('designation_status') is-invalid @enderror" name="designation_status" id="designation-status" class="form-control" required>
                 <option value="" selected disabled>-- {{ __('Select designation status') }} --</option>
-                <option value="0" {{ isset($designation) && $designation?->designation_status == '0' ? 'selected' : (old('designation_status') == '0' ? 'selected' : '') }}>{{ __('True') }}</option>
-				<option value="1" {{ isset($designation) && $designation?->designation_status == '1' ? 'selected' : (old('designation_status') == '1' ? 'selected' : '') }}>{{ __('False') }}</option>
+                <option value="0" {{ isset($designation) && $designation?->designation_status == '0' ? 'selected' : (old('designation_status') == '0' ? 'selected' : '') }}>{{ __('Active') }}</option>
+				<option value="1" {{ isset($designation) && $designation?->designation_status == '1' ? 'selected' : (old('designation_status') == '1' ? 'selected' : '') }}>{{ __('Inactive') }}</option>
             </select>
             @error('designation_status')
                 <span class="text-danger">

@@ -42,6 +42,9 @@ class VendorController extends Controller implements HasMiddleware
 				->addColumn('vendor_desp', function($row) {
                         return str($row->vendor_desp)->limit(100);
                     })
+                    ->addColumn('vendor_status', function($row) {
+                        return $row->vendor_status ? 'Active' : 'Inactive';
+                    })
 				->addColumn('action', 'vendors.include.action')
                 ->toJson();
         }
