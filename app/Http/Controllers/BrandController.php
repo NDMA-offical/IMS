@@ -33,9 +33,6 @@ class BrandController extends Controller implements HasMiddleware
     public function index(): View|JsonResponse
     {
 
-        dd('test');
-
-
         if (request()->ajax()) {
             $brands = Brand::query();
 
