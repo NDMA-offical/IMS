@@ -42,12 +42,12 @@ class EmployeeController extends Controller implements HasMiddleware
 				->addColumn('employee_cnic', function($row) {
                         return str($row->employee_cnic)->limit(100);
                     })
-				->addColumn('employee_email', function($row) {
-                        return str($row->employee_email)->limit(100);
-                    })
-				->addColumn('employee_contact', function($row) {
-                        return str($row->employee_contact)->limit(100);
-                    })
+				// ->addColumn('employee_email', function($row) {
+                //         return str($row->employee_email)->limit(100);
+                //     })
+				// ->addColumn('employee_contact', function($row) {
+                //         return str($row->employee_contact)->limit(100);
+                //     })
 				->addColumn('wing', function ($row) {
                     return $row?->wing?->wing_name ?? '';
                 })->addColumn('section', function ($row) {
