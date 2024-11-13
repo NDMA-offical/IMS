@@ -40,7 +40,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Source Name') }}</th>
-											<th>{{ __('Source Desp') }}</th>
+											<th>{{ __('Source Description') }}</th>
 											<th>{{ __('Source Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->

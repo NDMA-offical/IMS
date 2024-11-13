@@ -43,7 +43,7 @@
                                         <td>{{ $wing->wing_short_name }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">{{ __('Wing Desp') }}</td>
+                                        <td class="fw-bold">{{ __('Wing Description') }}</td>
                                         <td>{{ $wing->wing_desp }}</td>
                                     </tr>
                                     <tr>

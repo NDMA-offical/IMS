@@ -39,7 +39,7 @@
                                         <td>{{ $project->project_name }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">{{ __('Project Desp') }}</td>
+                                        <td class="fw-bold">{{ __('Project Description') }}</td>
                                         <td>{{ $project->project_desp }}</td>
                                     </tr>
                                     <tr>

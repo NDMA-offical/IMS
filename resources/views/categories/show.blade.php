@@ -39,7 +39,7 @@
                                         <td>{{ $category->category_name }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">{{ __('Category Desp') }}</td>
+                                        <td class="fw-bold">{{ __('Category Description') }}</td>
                                         <td>{{ $category->category_desp }}</td>
                                     </tr>
                                     <tr>

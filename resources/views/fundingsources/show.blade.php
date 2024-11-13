@@ -39,7 +39,7 @@
                                         <td>{{ $fundingsource->source_name }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">{{ __('Source Desp') }}</td>
+                                        <td class="fw-bold">{{ __('Source Description') }}</td>
                                         <td>{{ $fundingsource->source_desp }}</td>
                                     </tr>
                                     <tr>

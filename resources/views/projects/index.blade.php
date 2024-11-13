@@ -40,7 +40,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Project Name') }}</th>
-											<th>{{ __('Project Desp') }}</th>
+											<th>{{ __('Project Description') }}</th>
 											<th>{{ __('Project Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->

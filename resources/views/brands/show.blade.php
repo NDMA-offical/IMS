@@ -39,7 +39,7 @@
                                         <td>{{ $brand->brand_name }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">{{ __('Brand Desp') }}</td>
+                                        <td class="fw-bold">{{ __('Brand Description') }}</td>
                                         <td>{{ $brand->brand_desp }}</td>
                                     </tr>
                                     <tr>
