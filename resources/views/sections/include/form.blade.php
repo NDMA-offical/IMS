@@ -34,8 +34,8 @@
             <label for="section-status">{{ __('Section Status') }}</label>
             <select class="form-select @error('section_status') is-invalid @enderror" name="section_status" id="section-status" class="form-control" required>
                 <option value="" selected disabled>-- {{ __('Select section status') }} --</option>
-                <option value="0" {{ isset($section) && $section?->section_status == '0' ? 'selected' : (old('section_status') == '0' ? 'selected' : '') }}>{{ __('True') }}</option>
-				<option value="1" {{ isset($section) && $section?->section_status == '1' ? 'selected' : (old('section_status') == '1' ? 'selected' : '') }}>{{ __('False') }}</option>
+                <option value="0" {{ isset($section) && $section?->section_status == '0' ? 'selected' : (old('section_status') == '0' ? 'selected' : '') }}>{{ __('Inactive') }}</option>
+				<option value="1" {{ isset($section) && $section?->section_status == '1' ? 'selected' : (old('section_status') == '1' ? 'selected' : '') }}>{{ __('Active') }}</option>
             </select>
             @error('section_status')
                 <span class="text-danger">

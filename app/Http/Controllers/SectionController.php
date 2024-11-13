@@ -41,7 +41,10 @@ class SectionController extends Controller implements HasMiddleware
                     })
 				->addColumn('wing', function ($row) {
                     return $row?->wing?->wing_name ?? '';
-                })->addColumn('action', 'sections.include.action')
+                })->addColumn('section_status', function($row) {
+                    return $row->section_status ? 'Active' : 'Inactive';
+                })
+                ->addColumn('action', 'sections.include.action')
                 ->toJson();
         }
 
