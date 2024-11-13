@@ -39,9 +39,9 @@ class EmployeeController extends Controller implements HasMiddleware
                 ->addColumn('employee_name', function($row) {
                         return str($row->employee_name)->limit(100);
                     })
-				->addColumn('employee_cnic', function($row) {
-                        return str($row->employee_cnic)->limit(100);
-                    })
+				// ->addColumn('employee_cnic', function($row) {
+                //         return str($row->employee_cnic)->limit(100);
+                //     })
 				// ->addColumn('employee_email', function($row) {
                 //         return str($row->employee_email)->limit(100);
                 //     })
@@ -52,8 +52,8 @@ class EmployeeController extends Controller implements HasMiddleware
                     return $row?->wing?->wing_name ?? '';
                 })->addColumn('section', function ($row) {
                     return $row?->section?->section_name ?? '';
-                })->addColumn('designation', function ($row) {
-                    return $row?->designation?->designation_name ?? '';
+                // })->addColumn('designation', function ($row) {
+                //     return $row?->designation?->designation_name ?? '';
                 })->addColumn('action', 'employees.include.action')
                 ->toJson();
         }
