@@ -40,7 +40,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('Brand Name') }}</th>
-											<th>{{ __('Brand Desp') }}</th>
+											<!-- <th>{{ __('Brand Desp') }}</th> -->
 											<th>{{ __('Brand Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->
@@ -75,10 +75,10 @@
                     data: 'brand_name',
                     name: 'brand_name',
                 },
-				{
-                    data: 'brand_desp',
-                    name: 'brand_desp',
-                },
+				//{
+                  //  data: 'brand_desp',
+                   // name: 'brand_desp',
+                //},
 				{
                     data: 'brand_status',
                     name: 'brand_status',
