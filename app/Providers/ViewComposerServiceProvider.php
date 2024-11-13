@@ -70,6 +70,12 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
         View::composer(['items.create', 'items.edit'], function ($view) {
             return $view->with(
+                'conditions',
+                \App\Models\Condition::select('id', 'condition_name')->get()
+            );
+        });
+        View::composer(['items.create', 'items.edit'], function ($view) {
+            return $view->with(
                 'itemtypes',
                 \App\Models\Itemtype::select('id', 'type_name')->get()
             );
@@ -86,9 +92,13 @@ class ViewComposerServiceProvider extends ServiceProvider
 		View::composer(['issues.create', 'issues.edit'], function ($view) {
             return $view->with(
                 'items',
-                \App\Models\Item::select('id', 'item_code')->get()
+                \App\Models\Item::select('id', 'item_code')
+                    ->where('item_status', 1)
+                    ->get()
             );
         });
+
+
         View::composer(['issues.create', 'issues.edit'], function ($view) {
             return $view->with(
                 'employees',
