@@ -41,13 +41,10 @@
                                         <tr>
                                             <th>{{ __('Employee Name') }}</th>
 											<th>{{ __('Employee Cnic') }}</th>
-											<th>{{ __('Employee Email') }}</th>
-											<th>{{ __('Employee Contact') }}</th>
+											<!-- <th>{{ __('Employee Email') }}</th>
+											<th>{{ __('Employee Contact') }}</th> -->
 											<th>{{ __('Wing') }}</th>
 											<th>{{ __('Designation') }}</th>
-											<th>{{ __('User Status') }}</th>
-                                            <th>{{ __('Created At') }}</th>
-                                            <th>{{ __('Updated At') }}</th>
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -84,32 +81,12 @@
                     name: 'employee_cnic',
                 },
 				{
-                    data: 'employee_email',
-                    name: 'employee_email',
-                },
-				{
-                    data: 'employee_contact',
-                    name: 'employee_contact',
-                },
-				{
                     data: 'wing',
                     name: 'wing.wing_name'
                 },
 				{
                     data: 'designation',
                     name: 'designation.designation_name'
-                },
-				{
-                    data: 'user_status',
-                    name: 'user_status',
-                },
-                {
-                    data: 'created_at',
-                    name: 'created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'updated_at'
                 },
                 {
                     data: 'action',

@@ -21,7 +21,7 @@ class Employee extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['employee_name', 'employee_cnic', 'employee_email', 'employee_contact', 'wing_id', 'designation_id', 'user_status'];
+    protected $fillable = ['employee_name', 'employee_cnic', 'wing_id', 'designation_id', 'user_status'];
 
     /**
      * Get the attributes that should be cast.
@@ -30,7 +30,7 @@ class Employee extends Model
      */
     protected function casts(): array
     {
-        return ['employee_name' => 'string', 'employee_cnic' => 'string', 'employee_email' => 'string', 'employee_contact' => 'string', 'created_at' => 'datetime:Y-m-d H:i:s', 'updated_at' => 'datetime:Y-m-d H:i:s'];
+        return ['employee_name' => 'string', 'employee_cnic' => 'string', 'created_at' => 'datetime:Y-m-d H:i:s', 'updated_at' => 'datetime:Y-m-d H:i:s'];
     }
     
 	
