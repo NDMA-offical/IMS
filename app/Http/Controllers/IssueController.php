@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Issue;
+use App\Models\Item;
 use App\Http\Requests\Issues\{StoreIssueRequest, UpdateIssueRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
@@ -90,6 +91,7 @@ class IssueController extends Controller implements HasMiddleware
     {
 
         Issue::create($request->validated());
+        Item::where('id', $request->item_id)->update(['item_status' => 2]);
 
         return to_route('issues.index')->with('success', __('The issue was created successfully.'));
     }
