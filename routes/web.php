@@ -37,3 +37,4 @@ Route::resource('sections', App\Http\Controllers\SectionController::class)->midd
 Route::resource('conditions', App\Http\Controllers\ConditionController::class)->middleware('auth');
 Route::resource('returns', App\Http\Controllers\ReturnController::class)->middleware('auth');
 Route::resource('itemreturns', App\Http\Controllers\ItemreturnController::class)->middleware('auth');
+Route::get('/issues/{id}/receipt', [App\Http\Controllers\IssueController::class, 'printReceipt'])->middleware('auth')->name('issues.print');
