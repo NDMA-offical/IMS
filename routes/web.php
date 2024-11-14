@@ -39,3 +39,4 @@ Route::resource('returns', App\Http\Controllers\ReturnController::class)->middle
 Route::resource('itemreturns', App\Http\Controllers\ItemreturnController::class)->middleware('auth');
 
 Route::get('/fetch-issue-details', [App\Http\Controllers\ItemController::class, 'fetchIssueDetails']);
+Route::get('/issues/{id}/receipt', [App\Http\Controllers\IssueController::class, 'printReceipt'])->middleware('auth')->name('issues.print');
