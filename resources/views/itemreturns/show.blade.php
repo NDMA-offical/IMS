@@ -35,33 +35,33 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
                                     <tr>
-                    <td class="fw-bold">{{ __('Item') }}</td>
-                    <td>{{ $itemreturn->item ? $itemreturn->item->item_code : '' }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Returned By') }}</td>
-                    <td>{{ $itemreturn->returned_by }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Received By') }}</td>
-                    <td>{{ $itemreturn->received_by }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Condition') }}</td>
-                    <td>{{ $itemreturn->condition ? $itemreturn->condition->condition_name : '' }}</td>
-                </tr>
-<tr>
-                    <td class="fw-bold">{{ __('Quantity Returned') }}</td>
-                    <td>{{ $itemreturn->quantity_returned }}</td>
-                </tr>
+                                        <td class="fw-bold">{{ __('Item') }}</td>
+                                        <td>{{ $itemreturn->item ? $itemreturn->item->item_code : '' }}</td>
+                                    </tr>
                                     <tr>
+                                        <td class="fw-bold">{{ __('Returned By') }}</td>
+                                        <td>{{ optional($itemreturn->returnedByEmployee)->employee_name ?? '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Received By') }}</td>
+                                        <td>{{ optional($itemreturn->recievedByEmployee)->employee_name ?? '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Condition') }}</td>
+                                        <td>{{ $itemreturn->condition ? $itemreturn->condition->condition_name : '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">{{ __('Quantity Returned') }}</td>
+                                        <td>{{ $itemreturn->quantity_returned }}</td>
+                                    </tr>
+                                    <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>
                                         <td>{{ $itemreturn->created_at->format('Y-m-d H:i:s') }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Updated at') }}</td>
                                         <td>{{ $itemreturn->updated_at->format('Y-m-d H:i:s') }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
 

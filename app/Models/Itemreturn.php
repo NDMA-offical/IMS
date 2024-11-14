@@ -44,6 +44,14 @@ class Itemreturn extends Model
 		return $this->belongsTo(\App\Models\Condition::class);
 	}
 
+    public function returnedByEmployee(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Employee::class, 'returned_by', 'id');
+    }
+    public function receivedByEmployee(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Employee::class, 'received_by', 'id');
+    }
 
     
 

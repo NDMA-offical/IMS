@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Itemreturn;
+use App\Models\Item;
+use App\Models\Transaction;
 use App\Http\Requests\Itemreturns\{StoreItemreturnRequest, UpdateItemreturnRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
@@ -33,11 +35,16 @@ class ItemreturnController extends Controller implements HasMiddleware
     public function index(): View|JsonResponse
     {
         if (request()->ajax()) {
-            $itemreturns = Itemreturn::with(['item:id,item_code', 'condition:id,condition_name']);
+            $itemreturns = Itemreturn::with(['item:id,item_code', 'condition:id,condition_name'])->get();
 
             return DataTables::of($itemreturns)
                 ->addColumn('item', function ($row) {
                     return $row?->item?->item_code ?? '';
+                })->addColumn('returned_by', function ($row) {
+                    return $row->returnedByEmployee ? $row->returnedByEmployee->employee_name : '';
+                })
+                ->addColumn('received_by', function ($row) {
+                    return $row->receivedByEmployee ? $row->receivedByEmployee->employee_name : '';
                 })->addColumn('condition', function ($row) {
                     return $row?->condition?->condition_name ?? '';
                 })->addColumn('action', 'itemreturns.include.action')
@@ -62,8 +69,14 @@ class ItemreturnController extends Controller implements HasMiddleware
     public function store(StoreItemreturnRequest $request): RedirectResponse
     {
         
-        Itemreturn::create($request->validated());
+        $itemreturn = Itemreturn::create($request->validated());
+        Item::where('id', $request->item_id)->update(['item_status' => 1]);
 
+        Transaction::create([
+            'transaction_type' => 3,
+            'return_id' => $itemreturn->id,
+            'transaction_date' => now(), 
+        ]);
         return to_route('itemreturns.index')->with('success', __('The itemreturn was created successfully.'));
     }
 
@@ -72,7 +85,7 @@ class ItemreturnController extends Controller implements HasMiddleware
      */
     public function show(Itemreturn $itemreturn): View
     {
-        $itemreturn->load(['item:id,item_code', 'condition:id,condition_name']);
+        $itemreturn->load(['item:id,item_code', 'returnedByEmployee:id,employee_name', 'receivedByEmployee:id,employee_name', 'condition:id,condition_name']);
 
 		return view('itemreturns.show', compact('itemreturn'));
     }
