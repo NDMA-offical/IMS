@@ -48,4 +48,10 @@ class Issue extends Model
     {
         return $this->belongsTo(\App\Models\Employee::class, 'issue_by', 'id');
     }
+
+    public function employee()
+{
+    return $this->belongsTo(Employee::class, 'issue_to');
+}
+
 }
