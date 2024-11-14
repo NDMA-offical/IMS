@@ -23,4 +23,9 @@
             </button>
         </form>
     @endcan
+    @can('issue view')
+    <a href="{{ route('issues.print', $model->id) }}" class="btn btn-outline-primary btn-sm">
+            <i class="fa fa-download"></i>
+        </a>
+    @endcan
 </td>

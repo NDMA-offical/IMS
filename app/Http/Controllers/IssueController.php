@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\{JsonResponse, RedirectResponse};
 use Illuminate\Routing\Controllers\{HasMiddleware, Middleware};
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class IssueController extends Controller implements HasMiddleware
 {
@@ -148,5 +149,26 @@ class IssueController extends Controller implements HasMiddleware
         } catch (\Exception $e) {
             return to_route('issues.index')->with('error', __("The issue can't be deleted because it's related to another table."));
         }
+    }
+
+    /**
+     * Print Recipt Issue Vochour
+     */
+    public function printReceipt($issueId)
+    {
+        $issue = Issue::with(['item:id,item_code,item_desp', 'issueToEmployee:id,employee_name', 'issueByEmployee:id,employee_name'])->findOrFail($issueId);
+    
+        // Convert the logo to base64 format
+        $paklogoPath = public_path('mazer/static/images/logo/pak.png'); // Adjust path if needed
+        $logoPath = public_path('mazer/static/images/logo/logo1.png'); // Adjust path if needed
+        $paklogoData = base64_encode(file_get_contents($paklogoPath));
+        $paklogoBase64 = 'data:image/png;base64,' . $paklogoData;
+        $logoData = base64_encode(file_get_contents($logoPath));
+        $logoBase64 = 'data:image/png;base64,' . $logoData;
+        
+        // Pass both $issue and $logoBase64 to the view
+        $pdf = PDF::loadView('issues.receipt', compact('issue','paklogoBase64', 'logoBase64'));
+    
+        return $pdf->download('receipt.pdf');
     }
 }
