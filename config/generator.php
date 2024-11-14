@@ -150,6 +150,48 @@ return [
             //     ]
             // ],
             [
+                'title' => 'Items',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/items',
+                'permission' => 'item view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
+                'title' => 'Issues',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/issues',
+                'permission' => 'issue view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
+                'title' => 'Returns',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/itemreturns',
+                'permission' => 'itemreturn view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            
+            [
+                'title' => 'Repairs',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/repairs',
+                'permission' => 'repair view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            
+            [
+                'title' => 'Repairs Returns',
+                'icon' => '<i class="bi bi-folder-fill"></i>',
+                'route' => '/repairs',
+                'permission' => 'repair view',
+                'permissions' => [],
+                'submenus' => []
+            ],
+            [
                 'title' => 'Brands',
                 'icon' => '<i class="bi bi-folder-fill"></i>',
                 'route' => '/brands',
@@ -189,30 +231,7 @@ return [
                 'permissions' => [],
                 'submenus' => []
             ],
-            [
-                'title' => 'Items',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/items',
-                'permission' => 'item view',
-                'permissions' => [],
-                'submenus' => []
-            ],
-            [
-                'title' => 'Issues',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/issues',
-                'permission' => 'issue view',
-                'permissions' => [],
-                'submenus' => []
-            ],
-            [
-                'title' => 'Repairs',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/repairs',
-                'permission' => 'repair view',
-                'permissions' => [],
-                'submenus' => []
-            ],
+            
             [
                 'title' => 'Itemclasses',
                 'icon' => '<i class="bi bi-folder-fill"></i>',
@@ -268,23 +287,16 @@ return [
                 'permission' => 'condition view',
                 'permissions' => [],
                 'submenus' => []
-            ],
-            [
-                'title' => 'Returns',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/returns',
-                'permission' => 'return view',
-                'permissions' => [],
-                'submenus' => []
-            ],
-            [
-                'title' => 'Itemreturns',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/itemreturns',
-                'permission' => 'itemreturn view',
-                'permissions' => [],
-                'submenus' => []
             ]
+            // [
+            //     'title' => 'Returns',
+            //     'icon' => '<i class="bi bi-folder-fill"></i>',
+            //     'route' => '/returns',
+            //     'permission' => 'return view',
+            //     'permissions' => [],
+            //     'submenus' => []
+            // ],
+            
         ]
     ],
     [
