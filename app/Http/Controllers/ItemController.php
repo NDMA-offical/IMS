@@ -10,6 +10,9 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\{JsonResponse, RedirectResponse};
 use Illuminate\Routing\Controllers\{HasMiddleware, Middleware};
 
+use App\Models\Issue;
+use Illuminate\Http\Request;
+
 class ItemController extends Controller implements HasMiddleware
 {
     /**
@@ -27,6 +30,29 @@ class ItemController extends Controller implements HasMiddleware
             // new Middleware('permission:item delete', only: ['destroy']),
         ];
     }
+
+
+
+
+    public function fetchIssueDetails(Request $request)
+{
+    $itemId = $request->input('item_id');
+
+    // Fetch the issue details along with the employee name
+    $issue = Issue::where('item_id', $itemId)
+                ->with('employee:id,employee_name') // Load only id and employee_name from employees table
+                ->select('issue_to', 'issue_date')
+                ->first();
+
+    // Prepare the response data, including the employee_name if available
+    $response = [
+        'issue' => $issue,
+        'employee_name' => $issue->employee ? $issue->employee->employee_name : null,
+    ];
+
+    return response()->json($response);
+}
+
 
     /**
      * Display a listing of the resource.
@@ -87,11 +113,11 @@ class ItemController extends Controller implements HasMiddleware
             $request->validated(),
             ['item_status' => 1]
         ));
-        
+
         Transaction::create([
             'transaction_type' => 1,
             'item_id' => $item->id,
-            'transaction_date' => now(), 
+            'transaction_date' => now(),
         ]);
 
         return to_route('items.index')->with('success', __('The item was created successfully.'));

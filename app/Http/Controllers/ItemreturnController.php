@@ -52,6 +52,7 @@ class ItemreturnController extends Controller implements HasMiddleware
      */
     public function create(): View
     {
+       
         return view('itemreturns.create');
     }
 

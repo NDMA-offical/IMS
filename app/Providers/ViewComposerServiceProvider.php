@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Permission\Models\Role;
+use App\Models\Issue;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -97,7 +98,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                     ->get()
             );
         });
-
+ 
 
         View::composer(['issues.create', 'issues.edit'], function ($view) {
             return $view->with(
@@ -106,13 +107,9 @@ class ViewComposerServiceProvider extends ServiceProvider
             );
         });
 
-        View::composer(['itemretuns.create', 'itemretuns.edit'], function ($view) {
-            
-            return $view->with(
-                'employees',
-                \App\Models\Employee::select('id', 'employee_name')->get()
-            );
-        });
+        
+
+       
 
         
         
@@ -165,10 +162,11 @@ class ViewComposerServiceProvider extends ServiceProvider
 		
 
 		View::composer(['itemreturns.create', 'itemreturns.edit'], function ($view) {
-            return $view->with(
-                'items',
-                \App\Models\Item::select('id', 'item_code')->get()
-            );
+            $items = \App\Models\Item::select('id', 'item_code')
+                ->whereIn('id', Issue::pluck('item_id'))
+                ->get();
+        
+            return $view->with('items', $items);
         });
 
 		View::composer(['itemreturns.create', 'itemreturns.edit'], function ($view) {
@@ -177,6 +175,15 @@ class ViewComposerServiceProvider extends ServiceProvider
                 \App\Models\Condition::select('id', 'condition_name')->get()
             );
         });
+
+
+        View::composer(['itemreturns.create', 'itemreturns.edit'], function ($view) {
+            return $view->with(
+                'employees',
+                \App\Models\Employee::select('id', 'employee_name')->get()
+            );
+        });
+
 
 	}
 }

@@ -133,22 +133,22 @@ return [
             'itemreturn view'
         ],
         'menus' => [
-            [
-                'title' => 'Main Data',
-                'icon' => '<i class="bi bi-collection-fill"></i>',
-                'route' => null,
-                'permission' => null,
-                'permissions' => [
-                    'test view'
-                ],
-                'submenus' => [
-                    [
-                        'title' => 'Tests',
-                        'route' => '/tests',
-                        'permission' => 'test view'
-                    ]
-                ]
-            ],
+            // [
+            //     'title' => 'Main Data',
+            //     'icon' => '<i class="bi bi-collection-fill"></i>',
+            //     'route' => null,
+            //     'permission' => null,
+            //     'permissions' => [
+            //         'test view'
+            //     ],
+            //     'submenus' => [
+            //         [
+            //             'title' => 'Tests',
+            //             'route' => '/tests',
+            //             'permission' => 'test view'
+            //         ]
+            //     ]
+            // ],
             [
                 'title' => 'Brands',
                 'icon' => '<i class="bi bi-folder-fill"></i>',
