@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Repair;
+use App\Models\Item;
+use App\Models\Transaction;
 use App\Http\Requests\Repairs\{StoreRepairRequest, UpdateRepairRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
@@ -67,8 +69,15 @@ class RepairController extends Controller implements HasMiddleware
      */
     public function store(StoreRepairRequest $request): RedirectResponse
     {
-        
-        Repair::create($request->validated());
+        // dd($request);
+        $repair = Repair::create($request->validated());
+        Item::where('id', $request->item_id)->update(['item_status' => 2]);
+
+        Transaction::create([
+            'transaction_type' => 3,
+            'repair_id' => $repair->id,
+            'transaction_date' => now(), 
+        ]);
 
         return to_route('repairs.index')->with('success', __('The repair was created successfully.'));
     }

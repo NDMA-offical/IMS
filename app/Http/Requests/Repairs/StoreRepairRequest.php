@@ -21,12 +21,13 @@ class StoreRepairRequest extends FormRequest
     {
         return [
             'request_by' => 'required|string|min:1|max:25',
-			'request_date' => 'required|date',
+			'repair_init_date' => 'required|date',
 			'request_sheet_id' => 'required|string|min:1|max:25',
 			'repair_cost' => 'required|string|min:1|max:25',
-			'repair_date' => 'required|date',
-			'repair_status' => 'required|in:opt1,opt2',
+			'expected_return_date' => 'required|date',
+			'repair_status' => 'required',
 			'fundingsource_id' => 'required|exists:App\Models\Fundingsource,id',
+			'vendor_id' => 'required|exists:App\Models\Vendor,id',
         ];
     }
 }

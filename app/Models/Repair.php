@@ -21,22 +21,68 @@ class Repair extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['request_by', 'request_date', 'request_sheet_id', 'repair_cost', 'repair_date', 'repair_status', 'fundingsource_id'];
+    protected $fillable = [
+        'item_id',
+        'repair_init_date',
+        'expected_return_date',
+        'actual_returned_date',
+        'repair_status',
+        'repair_cost',
+        'request_by',
+        'request_sheet_id',
+        'fundingsource_id',
+        'vendor_id'
+    ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast.
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return ['request_by' => 'string', 'request_date' => 'date:Y-m-d', 'request_sheet_id' => 'string', 'repair_cost' => 'string', 'repair_date' => 'date:Y-m-d', 'created_at' => 'datetime:Y-m-d H:i:s', 'updated_at' => 'datetime:Y-m-d H:i:s'];
-    }
+    protected $casts = [
+        'item_id' => 'integer',
+        'repair_init_date' => 'date:Y-m-d',
+        'expected_return_date' => 'date:Y-m-d',
+        'actual_returned_date' => 'date:Y-m-d',
+        'repair_status' => 'string',
+        'repair_cost' => 'string',
+        'request_by' => 'string',
+        'request_sheet_id' => 'string',
+        'fundingsource_id' => 'integer',
+        'vendor_id' => 'integer',
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s'
+    ];
     
-	
-	public function fundingsource(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-	{
-		return $this->belongsTo(\App\Models\Fundingsource::class);
-	}
+    /**
+     * Get the item associated with the repair.
+     */
+    public function item(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Item::class, 'item_id');
+    }
 
+    /**
+     * Get the employee who requested the repair.
+     */
+    public function requestedBy(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Employee::class, 'request_by');
+    }
+
+    /**
+     * Get the funding source that owns the repair.
+     */
+    public function fundingsource(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Fundingsource::class);
+    }
+
+    /**
+     * Get the vendor that owns the repair.
+     */
+    public function vendor(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Vendor::class);
+    }
 }

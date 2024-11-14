@@ -80,8 +80,8 @@
                     name: 'request_by',
                 },
 				{
-                    data: 'request_date',
-                    name: 'request_date',
+                    data: 'repair_init_date',
+                    name: 'repair_init_date',
                 },
 				{
                     data: 'request_sheet_id',
@@ -92,8 +92,8 @@
                     name: 'repair_cost',
                 },
 				{
-                    data: 'repair_date',
-                    name: 'repair_date',
+                    data: 'expected_return_date',
+                    name: 'expected_return_date',
                 },
 				{
                     data: 'repair_status',
