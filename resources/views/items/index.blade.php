@@ -39,7 +39,7 @@
                                 <table class="table table-striped" id="data-table" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('Item Code') }}</th>
+                                            <th>{{ __('Serial No') }}</th>
 											<th>{{ __('Item Name') }}</th>
 											<th>{{ __('Item Model No') }}</th>
 											<th>{{ __('Item Desp') }}</th>

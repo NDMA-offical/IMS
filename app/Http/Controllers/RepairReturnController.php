@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Repair;
-use App\Models\Item;
-use App\Models\Transaction;
-use App\Http\Requests\Repairs\{StoreRepairRequest, UpdateRepairRequest};
-use Illuminate\Contracts\View\View;
-use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Http\{JsonResponse, RedirectResponse};
-use Illuminate\Routing\Controllers\{HasMiddleware, Middleware};
+use Illuminate\Http\Request;
 
-class RepairController extends Controller implements HasMiddleware
+class RepairReturnController extends Controller
 {
     /**
      * Get the middleware that should be assigned to the controller.
@@ -49,11 +42,11 @@ class RepairController extends Controller implements HasMiddleware
                     })
 				->addColumn('fundingsource', function ($row) {
                     return $row?->fundingsource?->source_name ?? '';
-                })->addColumn('action', 'repairs.include.action')
+                })->addColumn('action', 'returnrepairs.include.action')
                 ->toJson();
         }
 
-        return view('repairs.index');
+        return view('returnrepairs.index');
     }
 
     /**
@@ -61,7 +54,7 @@ class RepairController extends Controller implements HasMiddleware
      */
     public function create(): View
     {
-        return view('repairs.create');
+        return view('returnrepairs.create');
     }
 
     /**
@@ -79,7 +72,7 @@ class RepairController extends Controller implements HasMiddleware
             'transaction_date' => now(), 
         ]);
 
-        return to_route('repairs.index')->with('success', __('The repair was created successfully.'));
+        return to_route('returnrepairs.index')->with('success', __('The repair was created successfully.'));
     }
 
     /**
@@ -89,7 +82,7 @@ class RepairController extends Controller implements HasMiddleware
     {
         $repair->load(['fundingsource:id,source_name', ]);
 
-		return view('repairs.show', compact('repair'));
+		return view('returnrepairs.show', compact('repair'));
     }
 
     /**
@@ -99,7 +92,7 @@ class RepairController extends Controller implements HasMiddleware
     {
         $repair->load(['fundingsource:id,source_name', ]);
 
-		return view('repairs.edit', compact('repair'));
+		return view('returnrepairs.edit', compact('repair'));
     }
 
     /**
@@ -110,7 +103,7 @@ class RepairController extends Controller implements HasMiddleware
         
         $repair->update($request->validated());
 
-        return to_route('repairs.index')->with('success', __('The repair was updated successfully.'));
+        return to_route('returnrepairs.index')->with('success', __('The repair was updated successfully.'));
     }
 
     /**
@@ -121,9 +114,9 @@ class RepairController extends Controller implements HasMiddleware
         try {
             $repair->delete();
 
-            return to_route('repairs.index')->with('success', __('The repair was deleted successfully.'));
+            return to_route('returnrepairs.index')->with('success', __('The repair was deleted successfully.'));
         } catch (\Exception $e) {
-            return to_route('repairs.index')->with('error', __("The repair can't be deleted because it's related to another table."));
+            return to_route('returnrepairs.index')->with('error', __("The repair can't be deleted because it's related to another table."));
         }
     }
 }

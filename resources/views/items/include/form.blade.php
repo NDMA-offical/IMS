@@ -1,8 +1,8 @@
 <div class="row mb-2">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="item-code">{{ __('Item Code') }}</label>
-            <input type="text" name="item_code" id="item-code" class="form-control @error('item_code') is-invalid @enderror" value="{{ isset($item) ? $item->item_code : old('item_code') }}" placeholder="{{ __('Item Code') }}" required />
+            <label for="item-code">{{ __('Serial No') }}</label>
+            <input type="text" name="item_code" id="item-code" class="form-control @error('item_code') is-invalid @enderror" value="{{ isset($item) ? $item->item_code : old('item_code') }}" placeholder="{{ __('Serial No') }}" required />
             @error('item_code')
             <span class="text-danger">
                 {{ $message }}
@@ -252,7 +252,7 @@
             @enderror
         </div>
     </div>
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
         <div class="form-group">
             <label for="terms">{{ __('Warranty Terms') }}</label>
             <input type="text" name="warranty_terms" id="warranty_terms" class="form-control @error('warranty_terms') is-invalid @enderror" value="{{ isset($item) ? $item->warranty_terms : old('warranty_terms') }}" placeholder="{{ __('warranty terms') }}" />
@@ -262,6 +262,6 @@
             </span>
             @enderror
         </div>
-    </div>
+    </div> -->
 </div>
 

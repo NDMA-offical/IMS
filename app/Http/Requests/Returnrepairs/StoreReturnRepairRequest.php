@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Repairs;
+namespace App\Http\Requests\ReturnRepairs;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRepairRequest extends FormRequest
+class StoreReturnRepairRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

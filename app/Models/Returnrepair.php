@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Itemreturn extends Model
+class Returnrepair extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Itemreturn extends Model
      *
      * @var string
      */
-    protected $table = 'itemreturns';
+    protected $table = 'repair_returns';
 
     /**
      * The attributes that are mass assignable.

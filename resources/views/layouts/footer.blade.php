@@ -30,6 +30,18 @@
             placeholder: "-- {{ __('Select sdsd') }} --",
             allowClear: true
         });
+        $('#category-id').select2({
+            placeholder: "-- {{ __('Select Category') }} --",
+            allowClear: true
+        });
+        $('#project-id').select2({
+            placeholder: "-- {{ __('Select Project') }} --",
+            allowClear: true
+        });
+        $('#vendor-id').select2({
+            placeholder: "-- {{ __('Select Vendorssss') }} --",
+            allowClear: true
+        });
     });
 
 
