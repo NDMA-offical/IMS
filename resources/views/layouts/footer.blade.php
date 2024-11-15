@@ -27,7 +27,7 @@
             allowClear: true
         });
         $('#issue_to').select2({
-            placeholder: "-- {{ __('Select sdsd') }} --",
+            placeholder: "-- {{ __('Select Employee') }} --",
             allowClear: true
         });
         $('#category-id').select2({
@@ -39,7 +39,7 @@
             allowClear: true
         });
         $('#vendor-id').select2({
-            placeholder: "-- {{ __('Select Vendorssss') }} --",
+            placeholder: "-- {{ __('Select Vendor') }} --",
             allowClear: true
         });
     });
@@ -97,6 +97,47 @@
                             $('#issue-details').show();
                         } else {
                             $('#issue-details').hide();
+                        }
+                    },
+                    error: function() {
+                        alert('Failed to fetch issue details');
+                    }
+                });
+            } else {
+                $('#issue-details').hide();
+            }
+        });
+    });
+
+    // Get Item List of Issues item to employee
+    $(document).ready(function() {
+        $('#issue_to').change(function() {
+            var employee_id = $(this).val();
+
+            if (employee_id) {
+                $.ajax({
+                    url: '/fetch-issue-employees',
+                    type: 'GET',
+                    data: { employee_id: employee_id },
+                    success: function(response) {
+                        console.log(response);
+                        var $dropdown = $('#item-id');
+                        $dropdown.empty(); // Clear existing options
+
+                        if (response.length > 0) {
+                            // Append new options
+                            let option = [`<option value="" selected disabled>--Select Item--</option>`];
+                            $.each(response, function(index, item) {
+                                    option.push(`<option value="${item.id}">${item.item_code}</option>`);
+                            });
+                            console.log(option)
+                            $dropdown.append(option)
+                        } else {
+                            // Handle the case where no items are returned
+                            $dropdown.append($('<option>', {
+                                value: '',
+                                text: 'No items available'
+                            }));
                         }
                     },
                     error: function() {

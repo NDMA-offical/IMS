@@ -174,23 +174,23 @@ return [
                 'submenus' => []
             ],
             
-            [
-                'title' => 'Repairs',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/repairs',
-                'permission' => 'repair view',
-                'permissions' => [],
-                'submenus' => []
-            ],
+            // [
+            //     'title' => 'Repairs',
+            //     'icon' => '<i class="bi bi-folder-fill"></i>',
+            //     'route' => '/repairs',
+            //     'permission' => 'repair view',
+            //     'permissions' => [],
+            //     'submenus' => []
+            // ],
             
-            [
-                'title' => 'Repairs Returns',
-                'icon' => '<i class="bi bi-folder-fill"></i>',
-                'route' => '/repairs',
-                'permission' => 'repair view',
-                'permissions' => [],
-                'submenus' => []
-            ],
+            // [
+            //     'title' => 'Repairs Returns',
+            //     'icon' => '<i class="bi bi-folder-fill"></i>',
+            //     'route' => '/repairs',
+            //     'permission' => 'repair view',
+            //     'permissions' => [],
+            //     'submenus' => []
+            // ],
             [
                 'title' => 'Brands',
                 'icon' => '<i class="bi bi-folder-fill"></i>',

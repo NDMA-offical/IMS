@@ -44,7 +44,7 @@
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Received By') }}</td>
-                                        <td>{{ optional($itemreturn->recievedByEmployee)->employee_name ?? '' }}</td>
+                                        <td>{{ optional($itemreturn->receivedByEmployee)->employee_name ?? '' }}</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">{{ __('Condition') }}</td>

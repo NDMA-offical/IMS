@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Issue;
 use App\Http\Requests\Employees\{StoreEmployeeRequest, UpdateEmployeeRequest};
 use Illuminate\Contracts\View\View;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\{JsonResponse, RedirectResponse};
 use Illuminate\Routing\Controllers\{HasMiddleware, Middleware};
+use Illuminate\Http\Request;
+
 
 class EmployeeController extends Controller implements HasMiddleware
 {
@@ -123,5 +126,34 @@ class EmployeeController extends Controller implements HasMiddleware
         } catch (\Exception $e) {
             return to_route('employees.index')->with('error', __("The employee can't be deleted because it's related to another table."));
         }
+    }
+
+    
+    /**
+     * Get Employee from issued item list
+     */
+    public function fetchEmployeeDetails(Request $request){
+        $employeeId = $request->input('employee_id');
+    
+        // Fetch the issue details along with the employee name
+        $response = Issue::where('issue_to', $employeeId)
+                    ->with('item:id,item_code') // Load only id and employee_name from employees table
+                    // ->select('issue_to', 'issue_date')
+                    ->get();
+                    // Prepare the response data, including the employee_name if available
+        // $response = [
+        //     'issue' => $item,
+            // 'item_code' => $item->item ? $issue->item->item_code : null,
+        // ];
+        // dd($response);
+         // Prepare the response data, including the item code and employee name if available
+    $responseData = $response->map(function ($issue) {
+        return [
+            'id' => $issue->item ? $issue->item->id : null,
+            'item_code' => $issue->item ? $issue->item->item_code : null,
+        ];
+    });
+        
+        return response()->json($responseData);
     }
 }
