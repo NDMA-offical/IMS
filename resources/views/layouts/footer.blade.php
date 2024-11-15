@@ -133,11 +133,8 @@
                             console.log(option)
                             $dropdown.append(option)
                         } else {
-                            // Handle the case where no items are returned
-                            $dropdown.append($('<option>', {
-                                value: '',
-                                text: 'No items available'
-                            }));
+                            let option = [`<option value="" selected disabled>--No Item Found--</option>`];
+                            $dropdown.append(option)
                         }
                     },
                     error: function() {
