@@ -184,6 +184,28 @@ class ViewComposerServiceProvider extends ServiceProvider
             );
         });
 
+        View::composer(['repairs.create', 'repairs.edit'], function ($view) {
+            $items = \App\Models\Item::select('id', 'item_code')
+                ->where('item_status',1)
+                ->get();
+        
+            return $view->with('items', $items);
+        });
+
+
+        View::composer(['repairs.create', 'repairs.edit'], function ($view) {
+            return $view->with(
+                'employees',
+                \App\Models\Employee::select('id', 'employee_name')->get()
+            );
+        });
+
+        View::composer(['repairs.create', 'repairs.edit'], function ($view) {
+            $vendors = \App\Models\Vendor::select('id', 'vendor_name')
+                ->get();
+        
+            return $view->with('vendors', $vendors);
+        });
 
 	}
 }
