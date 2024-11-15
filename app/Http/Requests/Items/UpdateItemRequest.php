@@ -38,7 +38,7 @@ class UpdateItemRequest extends FormRequest
             'condition_id' => 'required|string',
             'warranty_start' => 'nullable|date',
             'warranty_end' => 'nullable|date',
-            'warranty_terms' => 'nullable|string',
+            // 'warranty_terms' => 'nullable|string',
         ];
     }
 }

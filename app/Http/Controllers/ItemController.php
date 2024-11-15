@@ -37,13 +37,13 @@ class ItemController extends Controller implements HasMiddleware
     public function fetchIssueDetails(Request $request)
 {
     $itemId = $request->input('item_id');
-
+    
     // Fetch the issue details along with the employee name
     $issue = Issue::where('item_id', $itemId)
                 ->with('employee:id,employee_name') // Load only id and employee_name from employees table
                 ->select('issue_to', 'issue_date')
                 ->first();
-
+    // dd($issue);
     // Prepare the response data, including the employee_name if available
     $response = [
         'issue' => $issue,
@@ -75,8 +75,8 @@ class ItemController extends Controller implements HasMiddleware
                 ->addColumn('item_desp', function ($row) {
                     return str($row->item_desp)->limit(100);
                 })
-                ->addColumn('item_status', function ($row) {
-                    return str($row->item_status)->limit(100);
+                ->addColumn('item_status', function($row) {
+                    return $row->item_status ? 'In Store' : 'Issued';
                 })
                 ->addColumn('brand', function ($row) {
                     return $row?->brand?->brand_name ?? '';

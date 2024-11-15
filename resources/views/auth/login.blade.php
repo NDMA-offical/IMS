@@ -12,7 +12,7 @@
             <div id="auth-left">
                 <div class="auth-logo">
                     <a href="/">
-                        <img src="{{ asset('mazer') }}/static/images/logo/logo.svg" alt="Logo">
+                        <img src="{{ asset('mazer') }}/static/images/logo/logo.png" alt="Logo">
                     </a>
                 </div>
                 <h1 class="auth-title">{{ __('Log in.') }}</h1>

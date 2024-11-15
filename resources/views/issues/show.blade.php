@@ -60,7 +60,7 @@
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">{{ __('Issue Status') }}</td>
-                                    <td>{{ $issue->issue_status }}</td>
+                                    <td>{{ $issue->issue_status?'Active':'In-Active' }}</td>
                                 </tr>
                                     <!-- <tr>
                                         <td class="fw-bold">{{ __('Created at') }}</td>

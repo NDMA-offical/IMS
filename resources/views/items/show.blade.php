@@ -35,7 +35,7 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-striped">
                                 <tr>
-                                    <td class="fw-bold">{{ __('Item Code') }}</td>
+                                    <td class="fw-bold">{{ __('Serial No') }}</td>
                                     <td>{{ $item->item_code }}</td>
                                 </tr>
                                 <tr>
@@ -77,7 +77,7 @@
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">{{ __('Item Status') }}</td>
-                                    <td>{{ $item->item_status }}</td>
+                                    <td>{{ $item->item_status?'In Store':'Issued' }}</td>
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">{{ __('GRN Date') }}</td>
@@ -92,13 +92,21 @@
                                     <td>{{ $item->vendor ? $item->vendor->vendor_name : '' }}</td>
                                 </tr>
                                 <tr>
+                                    <td class="fw-bold">{{ __('Warrenty Start') }}</td>
+                                    <td>{{ $item->warranty_start }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">{{ __('Warrenty End') }}</td>
+                                    <td>{{ $item->warranty_end }}</td>
+                                </tr>
+                                <!-- <tr>
                                     <td class="fw-bold">{{ __('Created at') }}</td>
                                     <td>{{ $item->created_at->format('Y-m-d H:i:s') }}</td>
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">{{ __('Updated at') }}</td>
                                     <td>{{ $item->updated_at->format('Y-m-d H:i:s') }}</td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </div>
 

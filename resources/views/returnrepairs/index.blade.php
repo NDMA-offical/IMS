@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', __('Items'))
+@section('title', __('Repairs'))
 
 @section('content')
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-8 order-md-1 order-last">
-                    <h3>{{ __('Items') }}</h3>
+                    <h3>{{ __('Repairs') }}</h3>
                     <p class="text-subtitle text-muted">
-                        {{ __('Below is a list of all items.') }}
+                        {{ __('Below is a list of all repairs.') }}
                     </p>
                 </div>
                 <x-breadcrumb>
                     <li class="breadcrumb-item"><a href="/">{{ __('Dashboard') }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ __('Items') }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ __('Repairs') }}</li>
                 </x-breadcrumb>
             </div>
         </div>
@@ -22,11 +22,11 @@
         <section class="section">
             <x-alert></x-alert>
 
-                @can('item create')
+                @can('repair create')
                     <div class="d-flex justify-content-end">
-                        <a href="{{ route('items.create') }}" class="btn btn-primary mb-3">
+                        <a href="{{ route('repairs.create') }}" class="btn btn-primary mb-3">
                             <i class="fas fa-plus"></i>
-                            {{ __('Create a new item') }}
+                            {{ __('Create a new repair') }}
                         </a>
                     </div>
                 @endcan
@@ -39,16 +39,13 @@
                                 <table class="table table-striped" id="data-table" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('Serial No') }}</th>
-											<th>{{ __('Item Name') }}</th>
-											<th>{{ __('Item Model No') }}</th>
-											<th>{{ __('Item Desp') }}</th>
-											<th>{{ __('Brand') }}</th>
-											<th>{{ __('Category') }}</th>
-											<th>{{ __('Project') }}</th>
+                                            <th>{{ __('Request By') }}</th>
+											<th>{{ __('Request Date') }}</th>
+											<th>{{ __('Request Sheet Id') }}</th>
+											<th>{{ __('Repair Cost') }}</th>
+											<th>{{ __('Repair Date') }}</th>
+											<th>{{ __('Repair Status') }}</th>
 											<th>{{ __('Fundingsource') }}</th>
-											<th>{{ __('Classification') }}</th>
-											<th>{{ __('Item Status') }}</th>
                                             <!-- <th>{{ __('Created At') }}</th>
                                             <th>{{ __('Updated At') }}</th> -->
                                             <th>{{ __('Action') }}</th>
@@ -76,47 +73,35 @@
         $('#data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('items.index') }}",
+            ajax: "{{ route('repairs.index') }}",
             columns: [
                 {
-                    data: 'item_code',
-                    name: 'item_code',
+                    data: 'request_by',
+                    name: 'request_by',
                 },
 				{
-                    data: 'item_name',
-                    name: 'item_name',
+                    data: 'repair_init_date',
+                    name: 'repair_init_date',
                 },
 				{
-                    data: 'item_model_no',
-                    name: 'item_model_no',
+                    data: 'request_sheet_id',
+                    name: 'request_sheet_id',
                 },
 				{
-                    data: 'item_desp',
-                    name: 'item_desp',
+                    data: 'repair_cost',
+                    name: 'repair_cost',
                 },
 				{
-                    data: 'brand',
-                    name: 'brand.brand_name'
+                    data: 'expected_return_date',
+                    name: 'expected_return_date',
                 },
 				{
-                    data: 'category',
-                    name: 'category.category_name'
-                },
-				{
-                    data: 'project',
-                    name: 'project.project_name'
+                    data: 'repair_status',
+                    name: 'repair_status',
                 },
 				{
                     data: 'fundingsource',
                     name: 'fundingsource.source_name'
-                },
-                {
-                    data: 'itemclass',
-                    name: 'itemclass.class_name'
-                },
-				{
-                    data: 'item_status',
-                    name: 'item_status',
                 },
                 // {
                 //     data: 'created_at',
